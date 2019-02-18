@@ -18,7 +18,7 @@ The `glances` sensor platform is consuming the system information provided by th
 
 ## {% linkable_title Setup %}
 
-This sensors needs a running instance of `glances` on the host. The minimal supported version of `glances` is 2.3.
+This sensor needs a running instance of `glances` on the host. The minimal supported version of `glances` is 2.3.
 To start a Glances RESTful API server on its default port 61208, the a test the following command can be used:
 
 ```bash
@@ -28,7 +28,7 @@ Glances web server started on http://0.0.0.0:61208/
 
 Check if you are able to access the API located at `http://IP_ADRRESS:61208/api/2`. Don't use `-s` as this will start the XMLRPC server on port 61209. Home Assistant only supports the REST API of GLANCES.
 
-The details about your memory usage is provided as a JSON response. If so, you are good to proceed.
+The details about your memory usage are provided as a JSON response. If so, you are good to proceed.
 
 ```bash
 $ curl -X GET http://IP_ADDRESS:61208/api/2/mem/free
@@ -135,4 +135,4 @@ resources:
       description: The total memory used by Docker containers.
 {% endconfiguration %}
 
-Not all platforms are able to provide all metrics. For instance `cpu_temp` is requires installing and configuring `lmsensors` in Ubuntu, and may not be available at all in other platforms.
+Not all platforms are able to provide all metrics. For instance `cpu_temp` requires installing and configuring `lmsensors` in Ubuntu, and may not be available at all in other platforms.
